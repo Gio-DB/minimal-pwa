@@ -11,20 +11,15 @@
 <body>
 
   <!-- Navigation -->
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="page1.html" class="active">Seite 1</a>
-    <div class="dropdown">
-      <button class="dropbtn">
-        Mehr
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="page2.html">Seite 2</a>
-        <a href="page3.html">Seite 3</a>
-      </div>
-    </div>
-  </div>
+  <div id="navbar"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading navigation:', err));
+  </script>
 
   <!-- Hauptinhalt -->
   <main>

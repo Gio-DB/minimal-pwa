@@ -75,3 +75,8 @@ body {
 main {
   padding: 20px;
 }
+
+/* Spacing class for clear separation between content blocks */
+.spacing {
+  margin: 60px 0;
+}
