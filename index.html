@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home - Meine PWA</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meine PWA</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome für das Dropdown-Symbol -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-<!-- Sidebar -->
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.html">Home</a>
-  <a href="page1.html">Seite 1</a>
-  <a href="page2.html">Seite 2</a>
-  <a href="page3.html">Seite 3</a>
-</div>
+  <!-- Navigation -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="page1.html">Seite 1</a>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Mehr
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="page2.html">Seite 2</a>
+        <a href="page3.html">Seite 3</a>
+      </div>
+    </div>
+  </div>
 
-<!-- Hamburger-Menü für Mobile -->
-<span class="openbtn" onclick="openNav()">&#9776; Menü</span>
+  <!-- Hauptinhalt -->
+  <main>
+    <h1>Willkommen auf der HomePage!</h1>
+    <p>Hier steht der Hauptinhalt der HomePage.</p>
+    <p>https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp</p>
+  </main>
 
-<!-- Main Content -->
-<div id="main">
-  <h1>Willkommen auf der HomePage!</h1>
-  <p>Hier steht der Hauptinhalt der HomePage.</p>
-</div>
-
-<script src="app.js"></script>
+  <!-- Dein App Script -->
+  <script src="app.js"></script>
 </body>
 </html>

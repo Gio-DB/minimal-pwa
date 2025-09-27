@@ -1,77 +1,77 @@
-/* Grundlayout */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
 
-/* Sidebar */
-.sidenav {
-  height: 100%; 
-  width: 200px; 
-  position: fixed; 
-  z-index: 1; 
-  top: 0;
-  left: 0;
-  background-color: #f4f4f4;
-  overflow-x: hidden; 
-  padding-top: 20px;
+.navbar {
+  overflow: hidden;
+  background-color: #333;
 }
 
-.sidenav a {
-  padding: 8px 16px;
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  font-size: 18px;
-  color: #333;
+}
+
+.navbar a.active {
+  background-color: #04AA6D; /* grüner Hintergrund */
+  color: white;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+.navbar a:hover, 
+.dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
-.sidenav a:hover {
-  color: #007BFF;
-}
-
-.sidenav .closebtn {
-  display: none;
-}
-
-/* Main Content */
-#main {
-  margin-left: 200px; /* Platz für Sidebar */
+/* Hauptinhalt etwas absetzen */
+main {
   padding: 20px;
-}
-
-/* Mobile */
-@media screen and (max-width: 768px) {
-  .sidenav {
-    width: 0;
-    position: fixed;
-    z-index: 2;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #f4f4f4;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-  }
-
-  .sidenav .closebtn {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 36px;
-  }
-
-  #main {
-    margin-left: 0;
-  }
-
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #f4f4f4;
-    padding: 10px 15px;
-    border: none;
-    display: block;
-  }
 }

@@ -2,27 +2,38 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seite 1 - Meine PWA</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seite 1 – Meine PWA</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome für Dropdown-Symbol -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-    <!-- Sidebar -->
-    <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!-- Navigation -->
+  <div class="navbar">
     <a href="index.html">Home</a>
     <a href="page1.html" class="active">Seite 1</a>
-    <a href="page2.html">Seite 2</a>
-    <a href="page3.html">Seite 3</a>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Mehr
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="page2.html">Seite 2</a>
+        <a href="page3.html">Seite 3</a>
+      </div>
     </div>
-
-    <main class="content">
-      <h1>Seite 1</h1>
-      <p>Inhalt von Seite 1.</p>
-    </main>
   </div>
 
+  <!-- Hauptinhalt -->
+  <main>
+    <h1>Seite 1</h1>
+    <p>Hier findest du den Inhalt von Seite 1.</p>
+    <p>Du kannst diesen Bereich frei mit Text, Bildern oder anderen Elementen gestalten.</p>
+  </main>
+
+  <!-- App Script -->
   <script src="app.js"></script>
 </body>
 </html>

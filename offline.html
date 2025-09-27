@@ -2,20 +2,36 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Offline</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #cc0000;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offline – Meine PWA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <h1>Offline-Modus</h1>
-  <p>Du bist momentan offline. Bitte versuche es später erneut.</p>
+
+  <!-- Navigation (optional, funktioniert aber offline nicht) -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="page1.html">Seite 1</a>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Mehr
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="page2.html">Seite 2</a>
+        <a href="page3.html">Seite 3</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hauptinhalt -->
+  <main>
+    <h1>Du bist offline</h1>
+    <p>Es scheint, dass du gerade keine Internetverbindung hast.</p>
+    <p>Die Inhalte sind möglicherweise nicht verfügbar. Bitte verbinde dich erneut mit dem Internet.</p>
+    <p><i class="fa fa-wifi" style="font-size:48px;color:red;"></i></p>
+  </main>
+
 </body>
 </html>

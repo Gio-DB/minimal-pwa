@@ -2,28 +2,38 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seite 3 - Meine PWA</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seite 3 – Meine PWA</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome für Dropdown-Symbol -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Menü</h2>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="page1.html">Seite 1</a></li>
-        <li><a href="page2.html">Seite 2</a></li>
-        <li><a href="page3.html">Seite 3</a></li>
-      </ul>
-    </nav>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="page1.html">Seite 1</a>
+    <div class="dropdown">
+      <button class="dropbtn active">
+        Mehr
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="page2.html">Seite 2</a>
+        <a href="page3.html" class="active">Seite 3</a>
+      </div>
+    </div>
   </div>
 
-  <div class="content">
+  <!-- Hauptinhalt -->
+  <main>
     <h1>Seite 3</h1>
-    <p>Inhalt von Seite 3.</p>
-  </div>
+    <p>Hier findest du den Inhalt von Seite 3.</p>
+    <p>Auch diese Seite ist frei anpassbar.</p>
+  </main>
 
+  <!-- App Script -->
   <script src="app.js"></script>
 </body>
 </html>
