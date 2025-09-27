@@ -7,23 +7,22 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Menü</h2>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="page1.html">Seite 1</a></li>
-        <li><a href="page2.html">Seite 2</a></li>
-        <li><a href="page3.html">Seite 3</a></li>
-      </ul>
-    </nav>
+
+    <!-- Sidebar -->
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="page1.html" class="active">Seite 1</a>
+    <a href="page2.html">Seite 2</a>
+    <a href="page3.html">Seite 3</a>
+    </div>
+
+    <main class="content">
+      <h1>Seite 1</h1>
+      <p>Inhalt von Seite 1.</p>
+    </main>
   </div>
 
-  <div class="content">
-    <h1>Seite 1</h1>
-    <p>Inhalt von Seite 1.</p>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -1,60 +1,77 @@
-/* Body als Flex-Container: Sidebar + Content nebeneinander */
+/* Grundlayout */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: row; /* wichtig, damit Sidebar links, Content rechts */
-  min-height: 100vh;
+  margin: 0;
 }
 
 /* Sidebar */
-.sidebar {
-  width: 200px;
-  background-color: #f4f4f4;
-  padding: 15px;
-  box-sizing: border-box;
-  height: 100vh;       /* volle Höhe */
-  position: sticky;    /* bleibt sichtbar beim Scrollen */
+.sidenav {
+  height: 100%; 
+  width: 200px; 
+  position: fixed; 
+  z-index: 1; 
   top: 0;
-  flex-shrink: 0;      /* verhindert, dass Sidebar schrumpft */
+  left: 0;
+  background-color: #f4f4f4;
+  overflow-x: hidden; 
+  padding-top: 20px;
 }
 
-/* Sidebar Text */
-.sidebar h2 {
-  margin-top: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 10px 0;
-}
-
-.sidebar ul li a {
+.sidenav a {
+  padding: 8px 16px;
   text-decoration: none;
+  font-size: 18px;
   color: #333;
+  display: block;
 }
 
-.sidebar ul li a:hover {
+.sidenav a:hover {
   color: #007BFF;
 }
 
-/* Content */
-.content {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
+.sidenav .closebtn {
+  display: none;
 }
 
-/* Mobile: Sidebar ausblenden */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column; /* Content über die ganze Breite */
+/* Main Content */
+#main {
+  margin-left: 200px; /* Platz für Sidebar */
+  padding: 20px;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .sidenav {
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
   }
-  .sidebar {
-    display: none;
+
+  .sidenav .closebtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+  }
+
+  #main {
+    margin-left: 0;
+  }
+
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    padding: 10px 15px;
+    border: none;
+    display: block;
   }
 }
