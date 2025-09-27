@@ -1,48 +1,28 @@
-const CACHE_NAME = 'minimal-pwa-cache-v1';
-const FILES_TO_CACHE = [
-  './',              // Startseite
-  './index.html',
-  './style.css',
-  './app.js',
-  './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+const CACHE_NAME = "pwa-cache-v1";
+const urlsToCache = [
+  "/minimal-pwa/index.html",
+  "/minimal-pwa/style.css",
+  "/minimal-pwa/app.js",
+  "/minimal-pwa/offline.html"
 ];
 
-// Install Event: Dateien in Cache legen
-self.addEventListener('install', event => {
-  console.log('[ServiceWorker] Install');
+// Install Event → Cache anlegen
+self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(FILES_TO_CACHE);
+      return cache.addAll(urlsToCache);
     })
   );
-  self.skipWaiting();
 });
 
-// Activate Event: alte Caches löschen
-self.addEventListener('activate', event => {
-  console.log('[ServiceWorker] Activate');
-  event.waitUntil(
-    caches.keys().then(keyList => {
-      return Promise.all(
-        keyList.map(key => {
-          if (key !== CACHE_NAME) {
-            console.log('[ServiceWorker] Entferne alten Cache:', key);
-            return caches.delete(key);
-          }
-        })
-      );
-    })
-  );
-  self.clients.claim();
-});
-
-// Fetch Event: aus Cache oder Netzwerk laden
-self.addEventListener('fetch', event => {
+// Fetch Event → zuerst Netzwerk, dann Cache
+self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
+    fetch(event.request).catch(() => {
+      // Wenn offline → offline.html anzeigen
+      if (event.request.mode === "navigate") {
+        return caches.match("/minimal-pwa/offline.html");
+      }
     })
   );
 });
