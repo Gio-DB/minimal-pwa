@@ -1,13 +1,14 @@
 const CACHE_NAME = 'minimal-pwa-cache-v1';
 const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png'
+  './',              // Startseite relativ
+  './index.html',
+  './style.css',
+  './app.js',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
 ];
+
 
 // Install event - Dateien cachen
 self.addEventListener('install', event => {
