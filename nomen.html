@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nomen – Grammatik Hilfe</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome für das Dropdown-Symbol -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- PWA-Optimierungen: Manifest und Theme Color -->
+  <meta name="theme-color" content="#317EFB">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="navbar"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading navigation:', err));
+  </script>
+  <!-- Hauptinhalt -->
+  <main>
+    <h1>Nomen</h1>
+    <p>Nomen (auch als Substantiv, Hauptwort, Dingwort, Gegenstandwort oder Namenwort) beschreiben Personen, Lebewesen, Pflanzen, Dinge, Gegenstände und Materialien. Abstrakte Begriffe wie Eigenschaften, Vorgänge, Beziehungen usw. können auch als Nomen stehen.</p>
+    <ul>
+      <li>Nomen werden großgeschrieben.</li>
+      <li>Nomen haben einen Artikel.</li>
+      <li>Artikel und Nomen lassen sich deklinieren.</li>
+    </ul>
+    <p>Siehe auch <a href="https://de.wikipedia.org/wiki/Nomen" target="_blank">Wikipedia</a>.</p>
+  </main>
+  <!-- Dein App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
