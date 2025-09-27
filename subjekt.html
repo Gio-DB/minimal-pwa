@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subjekt – Grammatik Hilfe</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome für das Dropdown-Symbol -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- PWA-Optimierungen: Manifest und Theme Color -->
+    <meta name="theme-color" content="#317EFB" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div id="navbar"></div>
+    <script>
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("navbar").innerHTML = html;
+        })
+        .catch((err) => console.error("Error loading navigation:", err));
+    </script>
+
+    <!-- Hauptinhalt -->
+    <main>
+      <h1>Subjekt</h1>
+      <p>
+        Das Subjekt ist ein Satzglied (z. B. eine Person, ein Sachverhalt, eine
+        Sache oder ein Gegenstand), das etwas tut (handelt). Das Subjekt kann
+        auch als „der Täter" bezeichnet werden, weil die Handlung vom Subjekt
+        bestimmt wird. Das Prädikat (konjugiertes Verb) bezieht sich
+        „immer" auf das Subjekt.
+      </p>
+
+      <h2>Beispiel</h2>
+      <ul>
+        <li><strong>[Lulu]</strong> isst einen <strong>[Apfel]</strong>.</li>
+      </ul>
+      <p>
+        <strong>Lulu:</strong> Das Subjekt – die handelnde Person, die Täterin,
+        die etwas tut.
+      </p>
+      <p>
+        <strong>isst:</strong> Das Prädikat, konjugiertes Verb (die Handlung
+        selbst).
+      </p>
+      <p><strong>Apfel:</strong> Das direkte Objekt, das Opfer.</p>
+
+      <div class="spacing"></div>
+      
+      <p>
+        Siehe auch
+        <a href="https://de.wikipedia.org/wiki/Subjekt" target="_blank"
+          >Wikipedia</a
+        >.
+      </p>
+    </main>
+
+    <!-- Dein App Script -->
+    <script src="app.js"></script>
+  </body>
+</html>
