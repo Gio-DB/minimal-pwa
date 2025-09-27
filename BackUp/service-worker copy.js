@@ -35,36 +35,22 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
-// Fetch Event → Network-first für HTML, Stale-while-revalidate für andere Ressourcen
+// Fetch Event → Network-first für HTML, Cache-first für andere Ressourcen
 self.addEventListener("fetch", event => {
   if (event.request.mode === "navigate") {
-    // HTML-Seiten: Network-first, aktualisiere Cache bei erfolgreicher Antwort
+    // HTML-Seiten: Network-first, fallback offline.html
     event.respondWith(
-      fetch(event.request)
-        .then(response => {
-          const responseClone = response.clone();
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, responseClone);
-          });
-          return response;
-        })
-        .catch(() => {
-          return caches.match(event.request).then(response => {
-            return response || caches.match("/minimal-pwa/offline.html");
-          });
-        })
+      fetch(event.request).catch(() => {
+        return caches.match(event.request).then(response => {
+          return response || caches.match("/minimal-pwa/offline.html");
+        });
+      })
     );
   } else {
-    // Stale-while-revalidate-Strategie für statische Ressourcen
+    // CSS, JS, Icons: Cache-first
     event.respondWith(
       caches.match(event.request).then(cachedResponse => {
-        const fetchPromise = fetch(event.request).then(networkResponse => {
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, networkResponse.clone());
-          });
-          return networkResponse;
-        });
-        return cachedResponse || fetchPromise;
+        return cachedResponse || fetch(event.request);
       })
     );
   }
