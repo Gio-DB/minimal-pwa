@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>xxx</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome für Dropdown-Symbol -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div id="navbar"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading navigation:', err));
+  </script>
+
+  <!-- Hauptinhalt -->
+  <main>
+    <h1>xxx</h1>
+    <p>xxx.</p>
+    <p>xxx</p>
+  </main>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
