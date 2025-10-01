@@ -8,15 +8,17 @@ const urlsToCache = [
   "/minimal-pwa/app.js",
   "/minimal-pwa/offline.html",
   "/minimal-pwa/icon-192.png",
-  "/minimal-pwa/icon-512.png"
+  "/minimal-pwa/icon-512.png",
+  "/minimal-pwa/2_nomen.html",
+  "/minimal-pwa/1_subjekt.html",
+  "/minimal-pwa/3_attribut.html",
+  "/minimal-pwa/nav.html"
 ];
 
 // Install Event → Cache anlegen
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache);
-    })
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
   self.skipWaiting();
 });
@@ -24,47 +26,45 @@ self.addEventListener("install", event => {
 // Activate Event → alte Caches löschen
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(
+    caches.keys().then(keys =>
+      Promise.all(
         keys.map(key => {
-          if (key !== CACHE_NAME) return caches.delete(key);
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
         })
-      );
-    })
+      )
+    )
   );
   self.clients.claim();
 });
 
-// Fetch Event → Network-first für HTML, Stale-while-revalidate für andere Ressourcen
+// Fetch Event
 self.addEventListener("fetch", event => {
   if (event.request.mode === "navigate") {
-    // HTML-Seiten: Network-first, aktualisiere Cache bei erfolgreicher Antwort
+    // Network-first Strategie für HTML-Seiten
     event.respondWith(
       fetch(event.request)
         .then(response => {
-          const responseClone = response.clone();
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, responseClone);
-          });
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
           return response;
         })
-        .catch(() => {
-          return caches.match(event.request).then(response => {
-            return response || caches.match("/minimal-pwa/offline.html");
-          });
-        })
+        .catch(() =>
+          caches.match(event.request).then(res => res || caches.match("/minimal-pwa/offline.html"))
+        )
     );
   } else {
-    // Stale-while-revalidate-Strategie für statische Ressourcen
+    // Stale-while-revalidate für statische Ressourcen
     event.respondWith(
-      caches.match(event.request).then(cachedResponse => {
+      caches.match(event.request).then(cached => {
         const fetchPromise = fetch(event.request).then(networkResponse => {
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, networkResponse.clone());
-          });
+          caches.open(CACHE_NAME).then(cache =>
+            cache.put(event.request, networkResponse.clone())
+          );
           return networkResponse;
         });
-        return cachedResponse || fetchPromise;
+        return cached || fetchPromise;
       })
     );
   }
