@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Das Attribut</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome für Dropdown-Symbol -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div id="navbar"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading navigation:', err));
+  </script>
+
+  <!-- Hauptinhalt -->
+  <main>
+    <section>
+      <h2>Pronomen</h2>
+      <p>Pronomen (auch <em>Fürwörter</em> genannt) <strong>ersetzen Nomen oder beziehen sich auf sie</strong>, um Wiederholungen zu vermeiden. Sie werden dekliniert und passen sich in Kasus, Zahl und Genus an.</p>
+
+      <h3>Unterarten von Pronomen</h3>
+      <ul>
+        <li><strong>Personalpronomen:</strong> vertreten Personen im Satz (<em>ich, du, er, sie, es, wir, ihr, sie</em>)</li>
+        <li><strong>Possessivpronomen:</strong> drücken Besitz oder Zugehörigkeit aus (<em>mein, dein, sein, unser, euer</em>)</li>
+        <li><strong>Demonstrativpronomen:</strong> weisen auf Nomen hin (<em>dieser, diese, dieses</em>)</li>
+        <li><strong>Relativpronomen:</strong> leiten Relativsätze ein (<em>der, die, das, welcher</em>)</li>
+        <li><strong>Reflexivpronomen:</strong> beziehen sich auf das Subjekt zurück (<em>sich, mich, dich, uns, euch</em>)</li>
+        <li><strong>Interrogativpronomen:</strong> leiten Fragen ein (<em>wer, was, wem, wen, wessen</em>)</li>
+        <li><strong>Indefinitpronomen:</strong> unbestimmte Personen oder Dinge (<em>jemand, niemand, man</em>)</li>
+      </ul>
+
+      <div class="spacer" style="height: 20px;"></div>
+      <h3>Personalpronomen</h3>
+      <table border="1" cellpadding="4" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Person</th>
+            <th style="background-color: #ccffcc;">Nominativ</th> <!-- hellgrün -->
+            <th style="background-color: #cce0ff;">Akkusativ</th> <!-- hellblau -->
+            <th style="background-color: #ffcccc;">Dativ</th>     <!-- hellrot/rosa -->
+            <th style="background-color: #ffffcc;">Genitiv</th>   <!-- hellgelb -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. Pers. Sing.</td>
+            <td>ich</td>
+            <td>mich</td>
+            <td>mir</td>
+            <td>meiner</td>
+          </tr>
+          <tr>
+            <td>2. Pers. Sing.</td>
+            <td>du</td>
+            <td>dich</td>
+            <td>dir</td>
+            <td>deiner</td>
+          </tr>
+          <tr>
+            <td>3. Pers. Sing.</td>
+            <td>er / sie / es</td>
+            <td>ihn / sie / es</td>
+            <td>ihm / ihr / ihm</td>
+            <td>seiner / ihrer / seiner</td>
+          </tr>
+          <tr>
+            <td>1. Pers. Pl.</td>
+            <td>wir</td>
+            <td>uns</td>
+            <td>uns</td>
+            <td>unser</td>
+          </tr>
+          <tr>
+            <td>2. Pers. Pl.</td>
+            <td>ihr</td>
+            <td>euch</td>
+            <td>euch</td>
+            <td>euer</td>
+          </tr>
+          <tr>
+            <td>3. Pers. Pl.</td>
+            <td>sie</td>
+            <td>sie</td>
+            <td>ihnen</td>
+            <td>ihrer</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="spacer" style="height: 20px;"></div>
+      <h3>Possessivpronomen</h3>
+      <p>Possessivpronomen können <strong>mit Nomen</strong> oder <strong>ohne Nomen</strong> stehen und werden unterschiedlich dekliniert.</p>
+
+      <h4>Mit Nomen</h4>
+      <table border="1" cellpadding="4" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Genus / Zahl</th>
+            <th style="background-color: #ccffcc;">Nominativ</th> <!-- hellgrün -->
+            <th style="background-color: #cce0ff;">Akkusativ</th> <!-- hellblau -->
+            <th style="background-color: #ffcccc;">Dativ</th>     <!-- hellrot/rosa -->
+            <th style="background-color: #ffffcc;">Genitiv</th>   <!-- hellgelb -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>maskulin</td>
+            <td>-</td>
+            <td>-en</td>
+            <td>-em</td>
+            <td>-es</td>
+          </tr>
+          <tr>
+            <td>feminin</td>
+            <td>-e</td>
+            <td>-e</td>
+            <td>-er</td>
+            <td>-er</td>
+          </tr>
+          <tr>
+            <td>neutral</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-em</td>
+            <td>-es</td>
+          </tr>
+          <tr>
+            <td>Plural</td>
+            <td>-e</td>
+            <td>-e</td>
+            <td>-en</td>
+            <td>-er</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Ohne Nomen</h4>
+      <table border="1" cellpadding="4" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Genus / Zahl</th>
+            <th style="background-color: #ccffcc;">Nominativ</th> <!-- hellgrün -->
+            <th style="background-color: #cce0ff;">Akkusativ</th> <!-- hellblau -->
+            <th style="background-color: #ffcccc;">Dativ</th>     <!-- hellrot/rosa -->
+            <th style="background-color: #ffffcc;">Genitiv</th>   <!-- hellgelb -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>maskulin</td>
+            <td>-er</td>
+            <td>-en</td>
+            <td>-em</td>
+            <td>-es</td>
+          </tr>
+          <tr>
+            <td>feminin</td>
+            <td>-e</td>
+            <td>-e</td>
+            <td>-er</td>
+            <td>-er</td>
+          </tr>
+          <tr>
+            <td>neutral</td>
+            <td>-s</td>
+            <td>-s</td>
+            <td>-em</td>
+            <td>-es</td>
+          </tr>
+          <tr>
+            <td>Plural</td>
+            <td>-e</td>
+            <td>-e</td>
+            <td>-en</td>
+            <td>-er</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="spacer" style="height: 20px;"></div>
+      <h3>Weitere Pronomenarten</h3>
+      <ul>
+        <li><strong>Demonstrativpronomen:</strong> dieser, diese, dieses (deklinierbar nach Kasus, Zahl, Genus)</li>
+        <li><strong>Relativpronomen:</strong> der, die, das, welcher</li>
+        <li><strong>Reflexivpronomen:</strong> sich, mich, dich, uns, euch</li>
+        <li><strong>Interrogativpronomen:</strong> wer, was, wem, wen, wessen</li>
+        <li><strong>Indefinitpronomen:</strong> jemand, niemand, man</li>
+      </ul>
+
+      <p><em>Hinweis:</em> Alle Pronomen werden nach Kasus, Zahl und Genus dekliniert. Possessivpronomen unterscheiden sich dabei je nachdem, ob sie <strong>mit</strong> oder <strong>ohne Nomen</strong> stehen.</p>
+    </section>
+
+  </main>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
