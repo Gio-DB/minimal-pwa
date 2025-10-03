@@ -78,11 +78,5 @@ main {
 
 /* Spacing class for clear separation between content blocks */
 .spacing {
-  margin: 60px 0;
-}
-
-/* Regel zur Hervorhebung von <em>-Elementen im Hauptinhalt */
-main em {
-  color: hsl(250, 100%, 50%); /* kräftiges Orange für Hervorhebung */
-  font-weight: bold;
+  margin: 30px 0;
 }
