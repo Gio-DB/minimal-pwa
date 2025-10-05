@@ -9,9 +9,9 @@ const urlsToCache = [
   "/minimal-pwa/offline.html",
   "/minimal-pwa/icon-192.png",
   "/minimal-pwa/icon-512.png",
-  "/minimal-pwa/2_nomen.html",
-  "/minimal-pwa/1_subjekt.html",
-  "/minimal-pwa/3_attribut.html",
+  "/minimal-pwa/1_nomen.html",
+  "/minimal-pwa/2_attribut.html",
+  "/minimal-pwa/3_subjekt.html",
   "/minimal-pwa/4_pronomen.html",
   "/minimal-pwa/nav.html"
 ];
