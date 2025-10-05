@@ -33,6 +33,10 @@ section {
 
 /* --- Responsives Design --- */
 @media (max-width: 768px) {
+  main {
+  padding: 5px;
+  }
+  
   section {
     padding: 10px 15px;
   }
@@ -76,6 +80,7 @@ section {
 .dropdown {
   float: left;
   overflow: hidden;
+  position: relative;
 }
 
 .dropdown-content {
@@ -85,7 +90,6 @@ section {
   min-width: 160px;
   position: absolute;
   z-index: 1;
-  top: 48px; /* <— füge diese Zeile hinzu */
 }
 
 .dropdown-content a {
@@ -158,3 +162,5 @@ ul {
   margin-left: 15px;
   padding-left: 10px;
 }
+
+/* ========================================================================================*/

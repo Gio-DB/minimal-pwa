@@ -1,0 +1,148 @@
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a.active {
+  background-color: #04AA6D; /* grüner Hintergrund */
+  color: white;
+}
+
+ç
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+.navbar a:hover, 
+.dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hauptinhalt etwas absetzen */
+main {
+  padding: 20px;
+}
+
+/* Spacing class for clear separation between content blocks */
+.spacing {
+  margin: 30px 0;
+}
+
+.topic-link {
+  text-decoration: none;
+  color: #003acd;
+  font-weight: 600;
+  position: relative;
+}
+
+.topic-link:hover {
+  text-decoration: underline;
+  color: #2d92f7;
+}
+
+.example {
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.link-icon {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-left: 6px;
+  color: #004080;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.topic-link:hover .link-icon {
+  transform: translateX(4px);
+  color: #002f66;
+}
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.0;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 2px;
+  }
+  h1, h2, h3 {
+    color: #2c3e50;
+  }
+/* Desktop-Standard */
+section {
+  background-color: #ffffff;
+  padding: 15px 20px; /* Desktop-Padding */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* Mobile-Geräte (z.B. max-width 768px) */
+@media (max-width: 768px) {
+  section {
+    padding: 10px 15px; /* kleineres Padding für Mobile */
+  }
+}
+ul {
+  margin-left: 10px;
+}
+mark {
+  background-color: #fffa65;
+  padding: 0 2px;
+}
+em.bsp {
+  display: block;
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 4px;
+}
