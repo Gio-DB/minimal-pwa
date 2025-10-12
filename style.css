@@ -179,6 +179,13 @@ ul {
   white-space: nowrap;   /* verhindert, dass Inhalte umbrechen */
 }
 
+.pronomen-table caption {
+  caption-side: top;    /* bleibt oben */
+  text-align: left;     /* linksbündig */
+  font-weight: bold;
+  margin-bottom: 4px;   /* Abstand zur Tabelle */
+}
+
 /* Header-Farben nach Kasus */
 .pronomen-table th.nom,
 .pronomen-table td.nom { background-color: #ccffcc; }   /* Nominativ */
