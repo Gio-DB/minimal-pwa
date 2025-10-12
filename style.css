@@ -158,3 +158,41 @@ ul {
   margin-left: 15px;
   padding-left: 10px;
 }
+
+/* =====================================================
+   Tabelle
+===================================================== */
+/* Tabellen-Grundformat */
+.pronomen-table {
+  border-collapse: collapse;
+  width: auto;           /* Breite passt sich dem Inhalt an */
+  max-width: 800px;      /* Begrenzung auf Desktop */
+  margin: 0 0 20px 0;    /* Abstand unten, linksbündig */
+  font-size: 0.95rem;    /* etwas kompakter */
+}
+
+.pronomen-table th,
+.pronomen-table td {
+  border: 1px solid #000;
+  padding: 4px 8px;      /* vertikal+horizontal etwas Luft */
+  text-align: left;
+  white-space: nowrap;   /* verhindert, dass Inhalte umbrechen */
+}
+
+/* Header-Farben nach Kasus */
+.pronomen-table th.nom,
+.pronomen-table td.nom { background-color: #ccffcc; }   /* Nominativ */
+.pronomen-table th.akk,
+.pronomen-table td.akk { background-color: #cce0ff; }   /* Akkusativ */
+.pronomen-table th.dat,
+.pronomen-table td.dat { background-color: #ffcccc; }   /* Dativ */
+.pronomen-table th.gen,
+.pronomen-table td.gen { background-color: #ffffcc; }   /* Genitiv */
+
+/* Scrollbare Tabelle auf kleinen Bildschirmen */
+.table-container {
+  overflow-x: auto;
+}
+
+
+
