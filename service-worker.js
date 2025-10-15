@@ -13,6 +13,7 @@ const urlsToCache = [
   "/minimal-pwa/2_attribut.html",
   "/minimal-pwa/3_subjekt.html",
   "/minimal-pwa/4_pronomen.html",
+  "/minimal-pwa/5_nominativ.html",
   "/minimal-pwa/nav.html"
 ];
 
